@@ -25,6 +25,14 @@ export class CartService {
     return this.http.get('/assets/shipping.json');
   }
 
+  getTotalPrice(){
+    let totalPrice = 0;
+    this.items.forEach(item => {
+      totalPrice += item.price;
+    });
+    return totalPrice;
+  }
+
 
   constructor(
     private http: HttpClient,
