@@ -4,6 +4,10 @@
   <h3>{{product.name}}</h3>
   <h4>{{product.price | currency }}</h4>
   <p>{{product.description}}</p>
+
+  <div *ngIf="product.imageUrl">
+    <img [src]="product.imageUrl" />
+  </div>
   
   <button (click)="addToCart()">Buy</button>
 </div>
